@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbe11e6f.css",
-    "main.js": "/static/js/main.feae8feb.js",
+    "main.css": "/static/css/main.54a97e4c.css",
+    "main.js": "/static/js/main.f51d5d80.js",
     "static/media/kiwi.png": "/static/media/kiwi.9dfef171dd93c63a6e70.png",
+    "static/media/babyKiwisFolder.riv": "/static/media/babyKiwisFolder.4f6905f4dc1e394f1326.riv",
     "index.html": "/index.html",
     "static/media/close.svg": "/static/media/close.66855b51823771e441c01c86d1d721e8.svg",
-    "main.cbe11e6f.css.map": "/static/css/main.cbe11e6f.css.map",
-    "main.feae8feb.js.map": "/static/js/main.feae8feb.js.map"
+    "main.54a97e4c.css.map": "/static/css/main.54a97e4c.css.map",
+    "main.f51d5d80.js.map": "/static/js/main.f51d5d80.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbe11e6f.css",
-    "static/js/main.feae8feb.js"
+    "static/css/main.54a97e4c.css",
+    "static/js/main.f51d5d80.js"
   ]
 }
