@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.a1f56bb6.css",
-    "main.js": "/static/js/main.264ab613.js",
+    "main.js": "/static/js/main.4fa5eb02.js",
     "static/media/GT-Alpina-Fine-Condensed-Thin.woff2": "/static/media/GT-Alpina-Fine-Condensed-Thin.59092a91ce2e47734e62.woff2",
     "static/media/kiwibg.svg": "/static/media/kiwibg.f5de2d77c2a71a2f8a983f5999a4488a.svg",
     "index.html": "/index.html",
     "static/media/next.svg": "/static/media/next.e5bd124c61f2ff9e45b49e18a9997424.svg",
     "static/media/prev.svg": "/static/media/prev.1a8632831458376894fc0978515ed7e5.svg",
     "main.a1f56bb6.css.map": "/static/css/main.a1f56bb6.css.map",
-    "main.264ab613.js.map": "/static/js/main.264ab613.js.map"
+    "main.4fa5eb02.js.map": "/static/js/main.4fa5eb02.js.map"
   },
   "entrypoints": [
     "static/css/main.a1f56bb6.css",
-    "static/js/main.264ab613.js"
+    "static/js/main.4fa5eb02.js"
   ]
 }
