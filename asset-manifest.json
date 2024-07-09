@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea2dc3e8.css",
-    "main.js": "/static/js/main.64087574.js",
-    "static/media/kiwi.png": "/static/media/kiwi.9dfef171dd93c63a6e70.png",
-    "static/media/babyKiwisFolder.riv": "/static/media/babyKiwisFolder.4f6905f4dc1e394f1326.riv",
+    "main.css": "/static/css/main.a1f56bb6.css",
+    "main.js": "/static/js/main.3db2b82c.js",
+    "static/media/GT-Alpina-Fine-Condensed-Thin.woff2": "/static/media/GT-Alpina-Fine-Condensed-Thin.59092a91ce2e47734e62.woff2",
+    "static/media/kiwibg.svg": "/static/media/kiwibg.f5de2d77c2a71a2f8a983f5999a4488a.svg",
     "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.66855b51823771e441c01c86d1d721e8.svg",
-    "main.ea2dc3e8.css.map": "/static/css/main.ea2dc3e8.css.map",
-    "main.64087574.js.map": "/static/js/main.64087574.js.map"
+    "static/media/next.svg": "/static/media/next.e5bd124c61f2ff9e45b49e18a9997424.svg",
+    "static/media/prev.svg": "/static/media/prev.1a8632831458376894fc0978515ed7e5.svg",
+    "main.a1f56bb6.css.map": "/static/css/main.a1f56bb6.css.map",
+    "main.3db2b82c.js.map": "/static/js/main.3db2b82c.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea2dc3e8.css",
-    "static/js/main.64087574.js"
+    "static/css/main.a1f56bb6.css",
+    "static/js/main.3db2b82c.js"
   ]
 }
