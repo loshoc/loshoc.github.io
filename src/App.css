@@ -1,38 +1,309 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @font-face {
+    font-family: 'GT-Alpina';
+    src: url('./fonts/GT-Alpina-Fine-Condensed-Thin.woff2') format('woff2');
   }
-  to {
-    transform: rotate(360deg);
+  
+  h1 {
+    font-family: 'GT-Alpina';
+    font-size: 3em;
+    color: #333;
   }
-}
+  
+  pre {
+    font-family: Inter;
+  }
+  
+  .app-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .home-page {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .detail-page {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .background {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-70%);
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+  }
+  
+  .background-svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .background h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 48px;
+  }
+  
+  .floating-panel-container {
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .floating-panel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .floating-panel-wrapper > * {
+    pointer-events: auto;
+  }
+  
+  .floating-panel {
+    will-change: transform, filter;
+    background: #80808040;
+    background-blend-mode: luminosity;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    border-radius: 28px;
+    border: 1.4px solid #ffffff2c;
+    z-index: 1000;
+    white-space: nowrap;
+    pointer-events: auto;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    
+    /* Force hardware acceleration */
+    transform: translateZ(0);
+    
+    /* Preload filter */
+    filter: blur(2);
+    transition: backdrop-filter 0.1s linear;
+  }
+  
+  
+  .app-icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .app-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 18px;
+  }
+  
+  .app-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    border: 0.794px solid #D8D8D8;
+    background: #F9F9F9;
+    color: #333;
+    padding: 5px 14px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1001;
+    transition: opacity 0.3s;
+  }
+  
+  .divider {
+    width: 1px;
+    height: 74px;
+    background-color: #565656;
+    margin: 0 5px;
+  }
+  
+  .home-button {
+    border-radius: 28px;
+    border: 1.4px solid #ffffff2c;
+    background: #a4a4a46f;
+    background-blend-mode: luminosity;
+    padding: 8px 34px;
+    z-index: 1000;
+    pointer-events: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    
+    /* Force hardware acceleration */
+    transform: translateZ(0);
+    
+    /* Preload filter */
+    filter: blur(2);
+    transition: backdrop-filter 0.1s linear;
+  }
+  
+  .picture-section {
+    position: relative;
+    width: 100%;
+    height: 69vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .picture-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .picture {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    position: absolute;
+  }
+  
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .prev-button {
+    left: 30px;
+  }
+  
+  .next-button {
+    right: 30px;
+  }
+  
+  .prev-button:hover,
+  .next-button:hover {
+    opacity: 0.6;
+  }
+  
+  .prev-button svg,
+  .next-button svg {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .content-wrapper {
+    width: 60%;
+    display: flex;
+    margin-bottom: 40px;
+  }
+  
+  .text-section {
+    width: 80%;
+    padding-right: 20%;
+  }
+  
+  .text-section p {
+    max-width: 100%;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .additional-content {
+    width: 20%;
+    padding-top: 40px;
+  }
+  
+  .additional-pictures {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .additional-pictures img {
+    width: 100%;
+    max-height: 69vh;
+    object-fit: cover;
+    border-radius: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .additional-descriptions {
+    width: 60%;
+    margin-bottom: 40px;
+  }
+  
+  .skeleton-wrapper {
+    padding: 20px;
+  }

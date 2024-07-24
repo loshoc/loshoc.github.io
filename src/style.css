@@ -1,0 +1,357 @@
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.left-pane {
+  flex: 1; /* Take up remaining space */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%; /* Adjust width to account for padding */
+  z-index: 999;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 100px; /* Add padding in all directions */
+}
+
+.right-pane {
+  flex: 2; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.preloader {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Elements will be stacked vertically */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+}
+
+.preloader > * {
+  margin-bottom: 10px; /* Adjust as needed to create space between the elements */
+}
+
+.preloader-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Elements will be stacked vertically */
+  
+  
+}
+
+.left-content {
+  flex: 1; /* Take up all available space within .left-pane */
+  width: 100%; /* Ensure full width */
+}
+
+.contact {
+  /* Removed fixed positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center content horizontally */
+  margin-top: auto; /* Push to the bottom of .left-pane */
+}
+
+
+.kiwi-button {
+  font-family: Inter, sans-serif;
+  font-size: 0.9em;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  /* Additional styles as needed */
+  margin-top: 2em;
+  
+}
+
+.kiwi-button:hover{
+  background-color: #3f3f3f;
+  color: rgb(255, 255, 255);
+}
+
+.right-pane {
+  flex: 0 0 50%; /* Take remaining space */
+  margin-left: 50%;
+  width: 50%;
+
+}
+
+
+
+body, html {
+  font-family: Inter, sans-serif;
+  font-size: 1em;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1{
+  color: #333333;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 2.8em;
+  margin:0 auto;
+}
+
+h1 i{
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+
+}
+p{
+  color: #b6b6b6;
+  font-size: 0.9em;
+  margin:0 auto;
+}
+
+h2{
+  color: #333333;
+  margin:0 auto;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+
+.Projects{
+  overflow: auto;
+  padding: 40px 100px 100px 100px;
+}
+
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  color:#b6b6b6;
+  float: left;
+  margin-right:38px ;
+}
+
+li a {
+  color:#b6b6b6;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #666666;
+}
+
+
+
+.project-image {
+width: 100%;
+
+object-fit: cover;
+border-radius:12px;
+border: solid 1px #00000010;
+transition: all 0.3s ease;
+}
+
+.project {
+padding-top: 5px;
+margin-bottom: 34px;
+}
+
+.project a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.project.with-link:hover img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  transform: scale(1.02);
+}
+.detail{
+  padding-top: 30px;
+}
+.aboutmecontent p{
+color: #7f7f7f;
+line-height: 130%;
+}
+
+.aboutmecontent a{
+    text-decoration: underline; /* Remove underline */
+    color: #7f7f7f; /* Inherit color from parent */
+  
+}
+.close-icon {
+  position: fixed;
+  cursor: pointer;
+  z-index: 10001;
+  top: 40px;
+  right: 60px;
+  width: 28px;
+  height: 28px;
+}
+
+.box {
+  width: 4em;
+  height: 4em;
+  border-radius: 24px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-size: 2.6em; /* Adjust font size as needed */
+}
+.box span {
+  font-size: 3em; /* Adjust the font size to change emoji size */
+}
+.boxcontainer{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .close-icon {
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+  }
+  .app-layout {
+    flex-direction: column; /* Stack panes vertically */
+  }
+
+  .left-pane,
+  .right-pane {
+    /* Responsive Styles - Vertical layout */
+    flex: 1;  /* Grows to fill available space */
+    width: 100%;  /* Take full width */
+   padding: 0%;
+  }
+
+  .left-pane {
+    position: static;  /* Remove fixed positioning */
+    padding: 20px;
+    height: 100vh;
+  }
+  .right-pane{
+    margin-left: 0;
+    
+  }
+
+  h1{
+    font-size: 1.6em;
+  }
+
+  .Projects{
+    padding: 20px;
+  }
+  
+  .aboutmecontent{
+    padding:20px;
+  }
+
+  .box {
+    width: 2.2em;
+    height: 2.2em;
+  }
+  .box span {
+    font-size: 1.4em; /* Adjust the font size to change emoji size */
+  }
+
+  .right-pane{
+    margin-bottom: 4em;
+  }
+  .kiwi-button {
+    margin-bottom: 9em;
+    padding: 8px 16px;
+  }
+  #avatar{
+    width: 6em;
+  }
+  .contact {
+    margin-bottom: 4em;
+  }
+  .left-content {
+   margin-top: 2em;
+  }
+
+  /*new*/
+  .floating-panel {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  
+  .app-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .app-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .home-button {
+    margin-left: auto;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+}
