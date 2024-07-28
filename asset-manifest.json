@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa220253.css",
-    "main.js": "/static/js/main.0fcbf2cd.js",
+    "main.css": "/static/css/main.89fb6f51.css",
+    "main.js": "/static/js/main.68e0b514.js",
     "static/media/GT-Alpina-Fine-Condensed-Thin.woff2": "/static/media/GT-Alpina-Fine-Condensed-Thin.59092a91ce2e47734e62.woff2",
     "static/media/kiwibg.svg": "/static/media/kiwibg.f5de2d77c2a71a2f8a983f5999a4488a.svg",
     "index.html": "/index.html",
     "static/media/next.svg": "/static/media/next.e5bd124c61f2ff9e45b49e18a9997424.svg",
     "static/media/prev.svg": "/static/media/prev.1a8632831458376894fc0978515ed7e5.svg",
-    "main.fa220253.css.map": "/static/css/main.fa220253.css.map",
-    "main.0fcbf2cd.js.map": "/static/js/main.0fcbf2cd.js.map"
+    "static/media/close.svg": "/static/media/close.66855b51823771e441c01c86d1d721e8.svg",
+    "main.89fb6f51.css.map": "/static/css/main.89fb6f51.css.map",
+    "main.68e0b514.js.map": "/static/js/main.68e0b514.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa220253.css",
-    "static/js/main.0fcbf2cd.js"
+    "static/css/main.89fb6f51.css",
+    "static/js/main.68e0b514.js"
   ]
 }
