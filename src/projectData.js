@@ -3,46 +3,79 @@ const projectData = {
     jblOne: {
       title: 'JBL One APP',
       description: 'JBL One App, a comprehensive companion application designed to seamlessly integrate with all JBL Wi-Fi speakers. As a platform designer on this system, I spearheaded several key initiatives that shaped the app\'s functionality and user experience.',
-      date: '2024',
+      date: '2023 - Now',
       skills: 'UIUX Design\nLighting Design',
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-1.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-1.png',
+          tag: 'Design System'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the second image of JBL One APP.'
+          text: 'When I joined the One Platform design team, we lacked a comprehensive design system. Although we used some local styles in Figma, our color management was far from ideal. The same components in different locations often had similar but not identical colors, causing confusion and difficulty for the development team in managing these variations. \n\nThe image below illustrates this issue, showing numerous disorganized color names pointing to the same color code. Recognizing the need for consistency, I undertook the task of reorganizing our color palette. By consolidating over 25 disparate colors, I streamlined our system into 9 neutral colors and 7 brand colors.',
+          tag: 'Design System'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-2.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-2.png',
+          tag: 'Design System'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the second image of JBL One APP.'
+          text: 'After successfully organizing the JBL color system, our next step was to create a corresponding color system for Harman/Kardon. Given that the architecture and functionality of the two apps were identical, having synchronized color systems was crucial. This alignment allowed us to seamlessly transfer designed features between the two brands, greatly simplifying both the design and development processes. \n\nThe image showcases this parallel color system. By ensuring that both brands shared a coherent color strategy, we enhanced the overall user experience and streamlined our workflow.',
+          tag: 'Design System'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-3.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-3.png',
+          tag: 'Design System'
+        },
+        
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-4.png',
+          tag: 'Design System'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the third image of JBL One APP.'
+          text: 'Building on the defined color system, I identified key elements from the existing design and transformed them into standardized components. These components were then modularized and centrally managed within our design system. This approach ensured that all platform designers and product-specific designers utilized these components, maintaining a consistent style across the board.',
+          tag: 'Design System',
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-4.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-5.png',
+          tag: 'Design System'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the fourth image of JBL One APP.'
-        }
+          text: 'In addition to my responsibilities as a platform designer, I also took on the role of designing specific product interfaces. I was tasked with creating the app control pages for PartyLight Beam and PartyLight Stick, two purely lighting products that serve as accessories to the PartyBox. These products required intricate control features to seamlessly integrate and interact with the PartyBox\'s functionalities.',
+          tag: 'PartyLight'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-6.png',
+          tag: 'PartyLight'
+        },
+        {
+          type: 'description',
+          text: 'Another my key contributions to the JBL One App was designing the account system. This feature allows users to create and log into accounts, save their settings, and register their products, ensuring a seamless and consistent experience with JBL.com.',
+          tag: 'Account System'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-7.png',
+          tag: 'Account System'
+        },
       ],
+      links: [
+        { title: 'App Store', url: 'https://apps.apple.com/us/app/jbl-one/id1610239857' },
+        { title: 'iF Design Award 2024', url: 'https://ifdesign.com/en/winner-ranking/project/jbl-oneos-eco-system/618483' }
+      ]
     },
     jblHp: {
       title: 'JBL Headphones APP',
-      description: 'This is the description for JBL Headphones APP.',
+      description: 'JBL Headphones App is a dedicated companion application designed to enhance the experience of using all JBL headphones products. As the product designer for the JBL Live3 Series, I played a crucial role in the design of this app. My contributions included crafting user-friendly interfaces and innovative features, some of which were implemented across the entire range of JBL headphones.',
       date: '2024',
       skills: 'UIUX Design',
       content: [
@@ -51,43 +84,54 @@ const projectData = {
           src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-1.png'
         },
         {
-          type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-2.png'
-        },
-        {
           type: 'description',
-          text: 'Description placeholder for the second image of JBL Headphones APP.'
+          text: 'Given the extensive range of features, I collaborated with the GPLM to reassess and prioritize these functionalities. We restructured the product control page by introducing three new categories: General, Audio, and Others. This reorganization streamlined the user experience, making it easier for users to navigate and manage their headphone settings. The new structure was implemented across all JBL headphone products, ensuring a consistent and intuitive interface for all users.',
+          tag: 'Restructure'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-3.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-2.png',
+          tag: 'Restructure'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the third image of JBL Headphones APP.'
+          text: 'JBL Headphones App includes a white noise feature designed to help users relax and calm down. This feature, which I helped design, offers five different scene elements that users can mix and match to create their ideal sound combinations.',
+          tag: 'Relax Sound'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-4.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-3.png',
+          tag: 'Relax Sound'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the fourth image of JBL Headphones APP.'
+          text: 'Design iteration of the Personi-Fi feature, which tests users\' hearing and provides sound compensation on the device. Compared to the previous version, the acoustics department incorporated more frequency bands into the test. Consequently, this design iteration needed to accommodate the dynamic adjustment of user testing steps and progress. Our design successfully met these requirements, ensuring the updated feature seamlessly integrated the new testing parameters and enhanced the overall user experience.',
+          tag: 'Personi-Fi'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-5.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-4.png',
+          tag: 'Personi-Fi'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the fifth image of JBL Headphones APP.'
-        }
+          text: 'As the designer for the JBL Live 3 Series, I redesigned the UI for the smart charging case with a screen. The new design features a rounded, user-friendly aesthetic. I refined key functions like "Find My Buds" to prevent misoperation and added new features such as Smart Talk and Message Preview. These enhancements allow users to interact and stay informed without needing to check their phones.',
+          tag: 'JBL Live 3 Series'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-5.png',
+          tag: 'JBL Live 3 Series'
+        },
       ],
+      links: [
+        { title: 'App Store', url: 'https://apps.apple.com/us/app/jbl-headphones/id1053136947' },
+      ]
     },
     akgHp: {
       title: 'AKG Headphones APP',
-      description: 'This is the description for AKG Headphones APP.',
-      date: '2024',
+      description: 'The AKG Headphones App update is a major visual and functional overhaul for AKG\'s new series products, AKG N5 and AKG N9. As the app designer, I focused on developing the multi-source control and audio mode features. Utilizing the latest Auracast Bluetooth technology and LE Audio, the app enhances the user experience for AKG headphones customers, providing seamless control and superior audio quality.',
+      date: '2023',
       skills: 'UIUX Design',
       content: [
         {
@@ -95,26 +139,81 @@ const projectData = {
           src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-1.png'
         },
         {
-          type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-2.png'
-        },
-        {
           type: 'description',
-          text: 'Description placeholder for the second image of AKG Headphones APP.'
+          text: 'Source visualization and control in app, including Bluetooth, Dongle, AUX, Support LE audio broadcasting, covering daily professional, and office usage.',
+          tag: 'Multi-Source Control'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-3.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-2.png',
+          tag: 'Multi-Source Control'
         },
         {
           type: 'description',
-          text: 'Description placeholder for the third image of AKG Headphones APP.'
-        }
+          text: 'Featuring dedicated settings for chat and entertainment modes. In Bluetooth mode, these modes automatically switch based on the input source, providing seamless transitions for users. Additionally, in AUX and Dongle modes, users have the option to manually operate these settings, ensuring a customizable audio experience tailored to their needs.',
+          tag: 'Entertainment/Audio Mode'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-3.png',
+          tag: 'Entertainment/Audio Mode'
+        },
+        
       ],
+      links: [
+        { title: 'Red Dot Design Award 2023', url: 'https://www.red-dot.org/project/akg-headphones-app-66774' },
+      ]
+    },
+    stringExtractor: {
+      title: 'String Extractor',
+      description: 'String Extractor is a Figma plugin designed to simplify the workflow of extracting text strings from design files for development teams. I designed and developed this plugin by myself. Targeting all teams needing to extract text strings, the String Extractor has significantly improved work efficiency by automating the extraction process.',
+      date: '2024',
+      skills: 'UIUX Design',
+      content: [
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-1.png'
+        },
+        {
+          type: 'description',
+          text: 'During collaboration with the development team, I discovered that they were manually extracting strings from our design files. This manual process was cumbersome for the developers and added extra review work for the design team, as it often resulted in the loss of text styles set in the design system, such as capitalization. To address this issue, I   developed the String Extractor plugin. This plugin required minimal design effort, as it only needed specific prefixes added to all text components. And the String Extractor can maintain text styles and filtered out duplicate strings.',
+          tag: 'Background'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-2.png',
+          tag: 'Background'
+        },
+        {
+          type: 'description',
+          text: 'After developing the plugin, we held a workshop with the development team to showcase its functionality. The developers were impressed with the plugin and recognized its potential to greatly enhance work efficiency.\n\nDuring the workshop, they raised a concern about the consistency of the string keys. They preferred that once a key is generated, it should remain unchanged even if the UI text is modified in future updates. This way, any changes to the text would only affect the value, not the key, reducing the need for constant code updates to reference new keys.',
+          tag: 'Workshop'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-3.png',
+          tag: 'Workshop'
+        },
+        {
+          type: 'description',
+          text: 'Based on the discussions during the workshop with the developers, I revised the key generation rules. The new approach combines the node ID, which never changes, with the UI page name, and the text layer\'s index within the page. This ensures that the generated keys are both unique and stable, even if the UI text changes in future updates. Additionally, the keys retain a level of readability, balancing the need for consistency with usability.',
+          tag: 'Update'
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-4.png',
+          tag: 'Update'
+        },
+        
+      ],
+      links: [
+        { title: 'Figma Community', url: 'https://www.figma.com/community/plugin/1395974170055927320/string-extractor' },
+        { title: 'GitHub', url: 'https://github.com/loshoc/string-extractor-figmaplugin/tree/dev' },
+      ]
     },
     linfo: {
       title: 'Linfo',
-      description: 'This is the description for Linfo.',
+      description: 'Linfo is an AI-driven platform designed to generate summaries or mind maps from web content and videos. As a freelancer on this project, I focused on redesigning the landing page after plugin installation and enhancing the plugin usage flow.',
       date: '2024',
       skills: 'UIUX Design',
       content: [
@@ -125,32 +224,27 @@ const projectData = {
         {
           type: 'picture',
           src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/linfo-2.png'
-        },
-        {
-          type: 'description',
-          text: 'Description placeholder for the second image of Linfo.'
         }
       ],
+      links: [
+        { title: 'Linfo', url: 'https://linfo.ai' },
+      ]
     },
     harmanCatdon: {
       title: 'Harman/Catdon',
-      description: 'This is the description for Harman/Catdon.',
+      description: 'Harman/Catdon is an AI conductor capable of directing music in real-time. I collaborated with colleagues from the New Technology Innovation department on this project, focusing on visualizing the processed real-time data and mapping it to the character\'s actions and background environment. This innovative project was showcased in a live performance with a band at the 2023 annual dinner.',
       date: '2024',
       skills: 'UIUX Design',
       content: [
         {
           type: 'picture',
           src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/harman-catdon.png'
-        },
-        {
-          type: 'description',
-          text: 'Description placeholder for the image of Harman/Catdon.'
         }
       ],
     },
     gday: {
       title: 'G\'Day',
-      description: 'A birthday gift for Gigi, a to-do list with all the tasks she needs to accomplish that day, each with a corresponding gift, and after all the tasks are completed she\'ll get her birthday gift!.',
+      description: 'A birthday gift app I developed for Gigi using SwiftUI. It is a to-do list app that includes all the tasks she needs to accomplish on her birthday. Each task has a corresponding gift, and after all the tasks are completed.\n\n She became my girlfriend❤️',
       date: '2023',
       skills: 'UIUX Design\niOS Dev',
       content: [
@@ -158,10 +252,6 @@ const projectData = {
           type: 'picture',
           src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/gday.png'
         },
-        {
-          type: 'description',
-          text: 'Additional description for G\'Day if needed.'
-        }
       ],
     },
   };

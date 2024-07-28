@@ -40,6 +40,7 @@ const FloatingPanel = ({ isDetailPage }) => {
     { name: 'JBL One', link: '/jbl-one', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/jbl-one.png` },
     { name: 'JBL Headphones', link: '/jbl-headphones', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/jbl-headphones.png` },
     { name: 'AKG Headphones', link: '/akg-headphones', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/akg-headphones.png` },
+    { name: 'String Extractor', link: '/string-extractor', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/string-extractor.png` },
     { name: 'Linfo', link: '/linfo', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/linfo.png` },
     { name: 'Harman/Catdon', link: '/harman-catdon', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/harman-catdon.png` },
     { name: 'G Day', link: '/G-Day', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/g-day.png` },

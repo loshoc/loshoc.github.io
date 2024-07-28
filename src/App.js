@@ -95,6 +95,21 @@ const App = () => {
               </motion.div>
             }
           />
+           <Route
+            path="/string-extractor"
+            element={
+              <motion.div
+                className="page"
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DetailPage {...projectData.stringExtractor} />
+              </motion.div>
+            }
+          />
           <Route
             path="/linfo"
             element={

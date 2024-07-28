@@ -53,6 +53,7 @@ body, html, #root {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 60px;
   }
   
   .background {
@@ -195,96 +196,52 @@ body, html, #root {
   
   .picture-section {
     position: relative;
-    width: 100%;
-    height: 69vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width:40vw;
+    margin: 0 auto 10px;
     overflow: hidden;
-    margin-bottom: 20px;
   }
   
   .picture-wrapper {
-    position: relative;
     width: 100%;
-    height: 100%;
-    border-radius: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    position: relative;
   }
   
   .picture {
     width: 100%;
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 22px;
-    position: absolute;
-  }
-  
-  .prev-button,
-  .next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .prev-button {
-    left: 30px;
-  }
-  
-  .next-button {
-    right: 30px;
-  }
-  
-  .prev-button:hover,
-  .next-button:hover {
-    opacity: 0.6;
-  }
-  
-  .prev-button svg,
-  .next-button svg {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .hidden {
-    display: none;
+    height: auto;
+    display: block;
+    border-radius: 14px;
   }
   
   .content-wrapper {
-    width: 60%;
-    display: flex;
-    margin-bottom: 40px;
+    width: 40vw;
+    margin: 0 auto 20px auto; /* Reduced bottom margin to 20px */
   }
   
   .text-section {
-    width: 80%;
-    padding-right: 20%;
+    width: 100%;
+  }
+  .title-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .text-section p {
     max-width: 100%;
-    color: #666;
+    color: #333;
     font-size: 0.9em;
+    margin: 35px 0; /* Remove top margin from paragraphs */
+    line-height: 150%;
   }
   
   .additional-content {
-    width: 20%;
-    padding-top: 40px;
+    width: 100%;
+    padding-top: 20px;
   }
-  
   .additional-pictures {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,10 +257,200 @@ body, html, #root {
   }
   
   .additional-descriptions {
-    width: 60%;
+    width: 40%;
     margin-bottom: 40px;
   }
   
   .skeleton-wrapper {
     padding: 20px;
   }
+
+  .navigation-menu {
+    position: fixed;
+    top: 190px;
+    left: 8vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  .nav-button.active {
+    color: #333;
+  }
+  
+  .nav-button:hover {
+    color: #333;
+  }
+  
+  
+ #description-section {
+  padding-top: 20px;
+ }
+
+ .link-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #eaeaea;
+  margin-bottom: 60px;
+}
+
+.link-section h2 {
+  font-family: 'GT-Alpina', sans-serif;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.link-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link-section li {
+  margin-bottom: 5px;
+}
+
+.link-section a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-section a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+.mobile-home-button {
+  display: none; /* Hidden by default */
+
+  
+
+  z-index: 1001;
+ 
+  color: #333;
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.expanded-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #80808060;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.expanded-image-container {
+  position: relative;
+  max-width: 70%;
+}
+
+.expanded-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.picture {
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+  .mobile-home-button {
+    display: block; /* Show only on mobile */
+  }
+
+  
+  .detail-page {
+    padding: 10px;
+  }
+
+  .content-wrapper,
+  .picture-section {
+    width: 94%;
+  }
+
+  .navigation-menu {
+    display: none; /* Hide navigation on mobile */
+  }
+
+  .detail-content {
+    padding-left: 0; /* Remove left padding on mobile */
+  }
+
+  .title-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title-section h1 {
+    font-size: 3em; /* Reduce title font size on mobile */
+    margin-bottom: 15px;
+  }
+
+  #description-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .text-section p {
+    font-size: 0.9em; /* Adjust font size for better readability on mobile */
+  }
+
+  .expanded-image-container {
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .expanded-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  .close-button {
+    display: none; /* Hide close button on mobile */
+  }
+}
