@@ -4,7 +4,7 @@ const projectData = {
       title: 'JBL One APP',
       description: 'JBL One App, a comprehensive companion application designed to seamlessly integrate with all JBL Wi-Fi speakers. As a platform designer on this system, I spearheaded several key initiatives that shaped the app\'s functionality and user experience.',
       date: '2023 - Now',
-      skills: 'UIUX Design\nLighting Design',
+      skills: ['UI/UX Design', 'Design System'],
       content: [
         {
           type: 'picture',
@@ -77,7 +77,7 @@ const projectData = {
       title: 'JBL Headphones APP',
       description: 'JBL Headphones App is a dedicated companion application designed to enhance the experience of using all JBL headphones products. As the product designer for the JBL Live3 Series, I played a crucial role in the design of this app. My contributions included crafting user-friendly interfaces and innovative features, some of which were implemented across the entire range of JBL headphones.',
       date: '2024',
-      skills: 'UIUX Design',
+      skills: ['UI/UX Design', 'User Research'],
       content: [
         {
           type: 'picture',
@@ -132,7 +132,7 @@ const projectData = {
       title: 'AKG Headphones APP',
       description: 'The AKG Headphones App update is a major visual and functional overhaul for AKG\'s new series products, AKG N5 and AKG N9. As the app designer, I focused on developing the multi-source control and audio mode features. Utilizing the latest Auracast Bluetooth technology and LE Audio, the app enhances the user experience for AKG headphones customers, providing seamless control and superior audio quality.',
       date: '2023',
-      skills: 'UIUX Design',
+      skills: ['UI/UX Design'],
       content: [
         {
           type: 'picture',
@@ -168,7 +168,7 @@ const projectData = {
       title: 'String Extractor',
       description: 'String Extractor is a Figma plugin designed to simplify the workflow of extracting text strings from design files for development teams. I designed and developed this plugin by myself. Targeting all teams needing to extract text strings, the String Extractor has significantly improved work efficiency by automating the extraction process.',
       date: '2024',
-      skills: 'UIUX Design',
+      skills: ['User Research','UI/UX Design', 'Plugin Develop'],
       content: [
         {
           type: 'picture',
@@ -215,7 +215,7 @@ const projectData = {
       title: 'Linfo',
       description: 'Linfo is an AI-driven platform designed to generate summaries or mind maps from web content and videos. As a freelancer on this project, I focused on redesigning the landing page after plugin installation and enhancing the plugin usage flow.',
       date: '2024',
-      skills: 'UIUX Design',
+      skills: ['UI/UX Design', 'Web Design'],
       content: [
         {
           type: 'picture',
@@ -234,7 +234,7 @@ const projectData = {
       title: 'Harman/Catdon',
       description: 'Harman/Catdon is an AI conductor capable of directing music in real-time. I collaborated with colleagues from the New Technology Innovation department on this project, focusing on visualizing the processed real-time data and mapping it to the character\'s actions and background environment. This innovative project was showcased in a live performance with a band at the 2023 annual dinner.',
       date: '2024',
-      skills: 'UIUX Design',
+      skills: ['Visual Design','Data Visualization', 'Develop'],
       content: [
         {
           type: 'picture',
@@ -246,7 +246,7 @@ const projectData = {
       title: 'G\'Day',
       description: 'A birthday gift app I developed for Gigi using SwiftUI. It is a to-do list app that includes all the tasks she needs to accomplish on her birthday. Each task has a corresponding gift, and after all the tasks are completed.\n\n She became my girlfriend❤️',
       date: '2023',
-      skills: 'UIUX Design\niOS Dev',
+      skills: ['UI/UX Design', 'iOS Dev'],
       content: [
         {
           type: 'picture',

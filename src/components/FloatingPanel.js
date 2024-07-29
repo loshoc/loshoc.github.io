@@ -7,25 +7,35 @@ const FloatingPanel = ({ isDetailPage }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const prevLocationRef = useRef(location.pathname);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const handleMouseMove = useCallback(
     (e) => {
-      if (!isDetailPage) return;
+      if (!isDetailPage || isMobile) return;
       const bottomThreshold = window.innerHeight * 0.70;
       const isInBottomArea = e.clientY >= bottomThreshold;
       setShowPanel(isInBottomArea);
     },
-    [isDetailPage]
+    [isDetailPage, isMobile]
   );
 
   useEffect(() => {
-    if (isDetailPage) {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isDetailPage && !isMobile) {
       window.addEventListener('mousemove', handleMouseMove);
-    } else {
+    } else if (!isDetailPage) {
       setShowPanel(true);
     }
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [handleMouseMove, isDetailPage]);
+  }, [handleMouseMove, isDetailPage, isMobile]);
 
   useEffect(() => {
     const prevLocation = prevLocationRef.current;
@@ -67,8 +77,12 @@ const FloatingPanel = ({ isDetailPage }) => {
     }, 300);
   };
 
+  if (isDetailPage && isMobile) {
+    return null;
+  }
+
   return (
-    <div className="floating-panel-container">
+    <div className={`floating-panel-container ${isMobile ? 'mobile' : ''}`}>
       <AnimatePresence>
         {isDetailPage && (
           <motion.div
@@ -90,7 +104,7 @@ const FloatingPanel = ({ isDetailPage }) => {
             exit="exit"
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
-            {isDetailPage && (
+            {isDetailPage && !isMobile && (
               <motion.div
                 className="home-button"
                 initial={{ opacity: 1 }}
@@ -102,7 +116,7 @@ const FloatingPanel = ({ isDetailPage }) => {
                 <span style={{ textDecoration: 'none', color: '#333' }}>Home</span>
               </motion.div>
             )}
-            <motion.div className="floating-panel">
+            <motion.div className={`floating-panel ${isMobile ? 'mobile-grid' : ''}`}>
               {apps.map((app, index) =>
                 app.type === 'internal' ? (
                   <React.Fragment key={index}>
@@ -115,16 +129,18 @@ const FloatingPanel = ({ isDetailPage }) => {
                       transition={{ duration: 0.3 }}
                     >
                       <img src={app.icon} alt={app.name} className="app-icon-img" />
-                      <div className="tooltip">{app.name}</div>
+                      {isMobile && <div className="app-name">{app.name}</div>}
+                      {!isMobile && <div className="tooltip">{app.name}</div>}
                     </motion.div>
-                    {index < apps.length - 1 && apps[index + 1].type === 'external' && (
+                    {!isMobile && index < apps.length - 1 && apps[index + 1].type === 'external' && (
                       <div className="divider"></div>
                     )}
                   </React.Fragment>
                 ) : (
                   <a key={index} href={app.link} target="_blank" rel="noopener noreferrer" className="app-icon">
                     <img src={app.icon} alt={app.name} className="app-icon-img" />
-                    <div className="tooltip">{app.name}</div>
+                    {isMobile && <div className="app-name">{app.name}</div>}
+                    {!isMobile && <div className="tooltip">{app.name}</div>}
                   </a>
                 )
               )}

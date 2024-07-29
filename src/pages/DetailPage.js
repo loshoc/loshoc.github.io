@@ -70,6 +70,38 @@ const DetailPage = ({ title, description, date, skills, content, links }) => {
       </React.Fragment>
     ));
   };
+  const renderSkills = () => {
+    if (!skills) {
+      return null; // If skills is undefined or null, don't render anything
+    }
+
+    if (typeof skills === 'string') {
+      // If skills is a single string, render it as one skill
+      return <span className="skill">{skills}</span>;
+    }
+
+    if (Array.isArray(skills)) {
+      // If skills is an array, map over it
+      return skills.map((skill, index) => (
+        <span key={index} className="skill">
+          {skill}
+        </span>
+      ));
+    }
+
+    if (typeof skills === 'object') {
+      // If skills is an object, render each key-value pair
+      return Object.entries(skills).map(([key, value], index) => (
+        <span key={index} className="skill">
+          {`${key}: ${value}`}
+        </span>
+      ));
+    }
+
+    // If skills is some other type, convert it to a string and render
+    return <span className="skill">{String(skills)}</span>;
+  };
+
 
   return (
     <div className="detail-page">
@@ -84,8 +116,9 @@ const DetailPage = ({ title, description, date, skills, content, links }) => {
           <div className="text-section">
             <div className="title-section">
               <h1>{title}</h1>
-              <div>{date}</div>
+              <div>{date}</div>              
             </div>
+            <div className='skill-section'>{renderSkills()}</div>
             <p id="description-section">{renderTextWithLineBreaks(description)}</p>
           </div>
         </div>
