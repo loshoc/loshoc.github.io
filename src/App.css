@@ -159,8 +159,8 @@ body, html, #root {
   }
   
   .floating-panel.mobile-grid .app-icon {
-    width: 60px;
-    height: 80px;
+    width: 74px;
+    height: 100px;
   }
   
   
@@ -176,8 +176,8 @@ body, html, #root {
     opacity: 1;
   }
   .app-name {
-    margin-top: 5px;
-    font-size: 10px;
+    margin-top: 8px;
+    font-size: 0.7em;
     text-align: center;
     color: #333;
     max-width: 60px;
@@ -486,16 +486,21 @@ body, html, #root {
 
   .title-section h1 {
     font-size: 3em; /* Reduce title font size on mobile */
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   #description-section {
     padding-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 0;
   }
 
   .text-section p {
     font-size: 0.9em; /* Adjust font size for better readability on mobile */
+  }
+
+  .link-section {
+    margin-top: 40px;
+    margin-bottom: 60px;
   }
 
   .expanded-image-container {
@@ -524,7 +529,7 @@ body, html, #root {
 
   .floating-panel.mobile-grid {
     grid-template-columns: repeat(4);
-    gap: 26px;
+    gap: 20px;
   }
   .app-name {
     display: block;
