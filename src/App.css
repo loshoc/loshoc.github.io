@@ -57,20 +57,49 @@ body, html, #root {
   }
   
   .background {
-    position: absolute;
-    top: 50%;
-    left: 0;
+    position: fixed;
+    overflow: hidden;
     width: 100%;
-    transform: translateY(-70%);
-    display: flex;
-    justify-content: center;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #ffffff, #ffffff);
     z-index: -1;
   }
-  
-  .background-svg {
-    max-width: 100%;
-    max-height: 100%;
+  .background div {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 100%);
+    filter: blur(100px);
+    opacity: 0.6;
+    will-change: transform, opacity;
+    transition: transform 5s ease-out, opacity 5s ease-out;
   }
+  
+  .background div:nth-child(1) {
+    background: radial-gradient(circle at center, rgba(31,207,195,0.3) 0%, rgba(31,145,207,0.3) 100%);
+    width: 70%;
+    padding-top: 20%;
+    left: -20%;
+    top: 80%;
+  }
+  
+  .background div:nth-child(2) {
+    background: radial-gradient(circle at center, rgba(255,132,0,0.3) 0%, rgba(255,111,0,0.3) 100%);
+    width: 60%;
+    padding-top: 40%;
+    left: -30%;
+    top: 0%;
+  }
+  
+  .background div:nth-child(3) {
+    background: radial-gradient(circle at center, rgba(23,62,255,0.3) 0%, rgba(31,104,207,0.3) 100%);
+    width: 50%;
+    padding-top: 10%;
+    left: 80%;
+    top: 50%;
+  }
+
   
   .background h1 {
     position: absolute;
@@ -82,7 +111,7 @@ body, html, #root {
   }
   
   .floating-panel-container {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
     width: 100%;
     display: flex;
@@ -90,6 +119,7 @@ body, html, #root {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    z-index: 1001; /* Increase z-index to be above ThreeModel */
   }
   
   .floating-panel-container.mobile {
@@ -112,26 +142,24 @@ body, html, #root {
   
   .floating-panel {
     will-change: transform, filter;
-    background: #80808040;
-    background-blend-mode: luminosity;
+    background: rgba(229, 229, 229, 0.6); /* Change background to be more opaque */
+    backdrop-filter: blur(2px); /* Increase blur effect */
+    -webkit-backdrop-filter: blur(2px);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
     padding: 10px 20px;
     border-radius: 28px;
-    border: 1.4px solid #ffffff2c;
-    z-index: 1000;
+    border: 1.4px solid rgba(255, 255, 255, 0.3);
+    z-index: 1001; /* Ensure it's above ThreeModel */
     white-space: nowrap;
     pointer-events: auto;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
     
     /* Force hardware acceleration */
     transform: translateZ(0);
-    
     /* Preload filter */
-    filter: blur(2);
+    filter: none; /* Remove any existing filter */
     transition: backdrop-filter 0.1s linear;
   }
   
@@ -168,6 +196,7 @@ body, html, #root {
   .app-icon img {
     max-width: 100%;
     max-height: 100%;
+    box-shadow: none;
     border-radius: 18px;
   }
   

@@ -65,6 +65,11 @@ const FloatingPanel = ({ isDetailPage }) => {
     exit: { opacity: 0, y: 20 },
   };
 
+  const iconVariants = {
+    initial: { y: 0 },
+    hover: { y: -5, transition: { type: "tween", ease: "easeInOut", duration: 0.25 } },
+  };
+
   const handleIconClick = (link) => {
     setTimeout(() => {
       navigate(link);
@@ -123,10 +128,9 @@ const FloatingPanel = ({ isDetailPage }) => {
                     <motion.div
                       className="app-icon"
                       onClick={() => handleIconClick(app.link)}
-                      initial={{ borderRadius: '18px', opacity: 1 }}
-                      whileHover={{ opacity: 0.8 }}
-                      whileTap={{ opacity: 0.6 }}
-                      transition={{ duration: 0.3 }}
+                      initial="initial"
+                      whileHover="hover"
+                      variants={iconVariants}
                     >
                       <img src={app.icon} alt={app.name} className="app-icon-img" />
                       {isMobile && <div className="app-name">{app.name}</div>}
@@ -137,11 +141,20 @@ const FloatingPanel = ({ isDetailPage }) => {
                     )}
                   </React.Fragment>
                 ) : (
-                  <a key={index} href={app.link} target="_blank" rel="noopener noreferrer" className="app-icon">
+                  <motion.a
+                    key={index}
+                    href={app.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="app-icon"
+                    initial="initial"
+                    whileHover="hover"
+                    variants={iconVariants}
+                  >
                     <img src={app.icon} alt={app.name} className="app-icon-img" />
                     {isMobile && <div className="app-name">{app.name}</div>}
                     {!isMobile && <div className="tooltip">{app.name}</div>}
-                  </a>
+                  </motion.a>
                 )
               )}
             </motion.div>
