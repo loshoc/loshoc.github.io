@@ -67,7 +67,7 @@ const FloatingPanel = ({ isDetailPage }) => {
 
   const iconVariants = {
     initial: { y: 0 },
-    hover: { y: -5, transition: { type: "tween", ease: "easeInOut", duration: 0.25 } },
+    hover: { y: -4, transition: { type: "tween", ease: "easeInOut", duration: 0.25 } },
   };
 
   const handleIconClick = (link) => {
