@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.ffba709c.css",
-    "main.js": "/static/js/main.ba524fa9.js",
+    "main.css": "/static/css/main.4cf5db09.css",
+    "main.js": "/static/js/main.44be722a.js",
     "static/media/GT-Alpina-Fine-Condensed-Thin.woff2": "/static/media/GT-Alpina-Fine-Condensed-Thin.59092a91ce2e47734e62.woff2",
     "index.html": "/index.html",
     "static/media/next.svg": "/static/media/next.e5bd124c61f2ff9e45b49e18a9997424.svg",
     "static/media/prev.svg": "/static/media/prev.1a8632831458376894fc0978515ed7e5.svg",
     "static/media/close.svg": "/static/media/close.66855b51823771e441c01c86d1d721e8.svg",
-    "main.ffba709c.css.map": "/static/css/main.ffba709c.css.map",
-    "main.ba524fa9.js.map": "/static/js/main.ba524fa9.js.map"
+    "main.4cf5db09.css.map": "/static/css/main.4cf5db09.css.map",
+    "main.44be722a.js.map": "/static/js/main.44be722a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffba709c.css",
-    "static/js/main.ba524fa9.js"
+    "static/css/main.4cf5db09.css",
+    "static/js/main.44be722a.js"
   ]
 }
