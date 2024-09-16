@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const FloatingPanel = ({ isDetailPage }) => {
   const [showPanel, setShowPanel] = useState(!isDetailPage);
+  const [hoveredApp, setHoveredApp] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const prevLocationRef = useRef(location.pathname);
@@ -54,6 +55,7 @@ const FloatingPanel = ({ isDetailPage }) => {
     { name: 'Linfo', link: '/linfo', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/linfo.png` },
     { name: 'Harman/Catdon', link: '/harman-catdon', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/harman-catdon.png` },
     { name: 'G Day', link: '/G-Day', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/g-day.png` },
+    { name: 'Side Projects', link: '/side-projects', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/side-projects.png` },
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/kiwi-guo/', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/linkedin.png` },
     { name: 'GitHub', link: 'https://github.com/loshoc', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/github.png` },
     { name: 'Email', link: 'mailto:loshochung@gmail.com', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/email.png` },
@@ -128,13 +130,24 @@ const FloatingPanel = ({ isDetailPage }) => {
                     <motion.div
                       className="app-icon"
                       onClick={() => handleIconClick(app.link)}
+                      onMouseEnter={() => setHoveredApp(app.name)}
+                      onMouseLeave={() => setHoveredApp(null)}
                       initial="initial"
                       whileHover="hover"
                       variants={iconVariants}
                     >
-                      <img src={app.icon} alt={app.name} className="app-icon-img" />
-                      {isMobile && <div className="app-name">{app.name}</div>}
-                      {!isMobile && <div className="tooltip">{app.name}</div>}
+                      {app.name === 'Side Projects' ? (
+                        <div className="side-projects-icon">
+                          <img src={`${process.env.PUBLIC_URL}/icons/string-extractor.png`} alt="String Extractor" className="mini-icon" />
+                          <img src={`${process.env.PUBLIC_URL}/icons/harman-catdon.png`} alt="Harman/Catdon" className="mini-icon" />
+                          <img src={`${process.env.PUBLIC_URL}/icons/g-day.png`} alt="G Day" className="mini-icon" />
+                        </div>
+                      ) : (
+                        <img src={app.icon} alt={app.name} className="app-icon-img" />
+                      )}
+                      {!isMobile && hoveredApp === app.name && (
+                        <div className="tooltip">{app.name}</div>
+                      )}
                     </motion.div>
                     {!isMobile && index < apps.length - 1 && apps[index + 1].type === 'external' && (
                       <div className="divider"></div>
@@ -147,13 +160,16 @@ const FloatingPanel = ({ isDetailPage }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="app-icon"
+                    onMouseEnter={() => setHoveredApp(app.name)}
+                    onMouseLeave={() => setHoveredApp(null)}
                     initial="initial"
                     whileHover="hover"
                     variants={iconVariants}
                   >
                     <img src={app.icon} alt={app.name} className="app-icon-img" />
-                    {isMobile && <div className="app-name">{app.name}</div>}
-                    {!isMobile && <div className="tooltip">{app.name}</div>}
+                    {!isMobile && hoveredApp === app.name && (
+                      <div className="tooltip">{app.name}</div>
+                    )}
                   </motion.a>
                 )
               )}
