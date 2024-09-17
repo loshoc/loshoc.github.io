@@ -10,6 +10,7 @@ const FloatingPanel = ({ isDetailPage }) => {
   const prevLocationRef = useRef(location.pathname);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [showSideProjectsCards, setShowSideProjectsCards] = useState(false);
+  const sideProjectsRef = useRef(null);
 
   const handleMouseMove = useCallback(
     (e) => {
@@ -128,6 +129,16 @@ const FloatingPanel = ({ isDetailPage }) => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [showSideProjectsCards]);
 
+  useEffect(() => {
+    if (sideProjectsRef.current) {
+      const cards = sideProjectsRef.current.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const randomRotation = Math.random() * 20 - 10; // Random value between -10 and 10
+        card.style.setProperty('--random-rotation', `${randomRotation}deg`);
+      });
+    }
+  }, [showSideProjectsCards]); // Re-run when cards are shown
+
   console.log("FloatingPanel rendering, showSideProjectsCards:", showSideProjectsCards);
 
   const testNavigation = () => {
@@ -233,6 +244,7 @@ const FloatingPanel = ({ isDetailPage }) => {
       </AnimatePresence>
       {showSideProjectsCards && (
         <div 
+          ref={sideProjectsRef}
           className="side-projects-cards"
           onClick={(e) => {
             console.log("Clicked on side-projects-cards container");
@@ -249,7 +261,9 @@ const FloatingPanel = ({ isDetailPage }) => {
                 handleCardClick(project.link);
               }}
             >
-              <img src={project.icon} alt={project.name} className="project-icon" />
+              <div className="icon-container">
+                <img src={project.icon} alt={project.name} className="project-icon" />
+              </div>
               <h3>{project.name}</h3>
               <p>{project.description}</p>
             </div>

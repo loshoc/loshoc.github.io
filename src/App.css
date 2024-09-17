@@ -504,10 +504,11 @@ body, html, #root {
   flex-wrap: wrap;
   justify-content: center;
   padding: 4px;
-  width: 100%;
-  height: 100%;
+  width: 70px;
+  height: 70px;
   background-color: #f0f0f0; /* Light gray background, adjust as needed */
   border-radius: 18px; /* Rounded corners, adjust as needed */
+  box-sizing: border-box;
 }
 
 .side-projects-icon .mini-icon {
@@ -520,51 +521,65 @@ body, html, #root {
 
 .side-projects-cards {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 20px;
-  background-color: white;
+  gap: 0px;
+
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   z-index: 10000; /* Increased z-index */
   pointer-events: auto; /* Ensure it can receive click events */
 }
 
 .project-card {
   width: 200px;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  text-align: center;
+  height: 250px;
+  padding: 16px;
+  border: 1px solid rgba(210, 210, 210, 0.3);
+  border-radius: 28px;
+  text-align: left;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  background-color: white; /* Ensure the card has a background */
+  background: rgba(247, 247, 247, 0.8); /* Change background to be more opaque */
+    backdrop-filter: blur(2px); /* Increase blur effect */
+    -webkit-backdrop-filter: blur(2px);
   position: relative; /* For z-index to work */
   z-index: 10001; /* Higher than the container */
+  transform: rotateZ(var(--random-rotation, 20deg));
+}
+
+.project-card .icon-container {
+  text-align: center; /* Center the icon container */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: rotateZ(0deg);
+  z-index: 10002;
 }
 
 .project-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
 }
 
 .project-card h3 {
   margin: 0 0 10px;
-  font-size: 16px;
+  font-family: 'GT-Alpina', sans-serif;
+  font-size: 22px;
+  color: #333;
 }
 
 .project-card p {
   font-size: 14px;
   color: #666;
 }
+
 
 @media (max-width: 768px) {
   .mobile-home-button {
