@@ -184,6 +184,7 @@ body, html, #root {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+    
      /* Change from hidden to visible */
     
   }
@@ -219,20 +220,28 @@ body, html, #root {
     text-decoration: none;
   }
   
+  .app-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .tooltip {
     position: absolute;
-    top: -50px; /* Adjust this value if needed */
+    top: -54px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 5px;
     border: 0.794px solid #D8D8D8;
     background: #F9F9F9;
     color: #333;
     padding: 5px 14px;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 1001;
-    transition: opacity 0.3s;
+    border-radius: 5px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1002;
+    opacity: 1;
+    visibility: visible;
   }
   
   .app-icon:hover .tooltip {
@@ -509,7 +518,53 @@ body, html, #root {
   border-radius: 6px; /* Remove border-radius for mini-icons */
 }
 
+.side-projects-cards {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10000; /* Increased z-index */
+  pointer-events: auto; /* Ensure it can receive click events */
+}
 
+.project-card {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  background-color: white; /* Ensure the card has a background */
+  position: relative; /* For z-index to work */
+  z-index: 10001; /* Higher than the container */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #666;
+}
 
 @media (max-width: 768px) {
   .mobile-home-button {
@@ -517,6 +572,7 @@ body, html, #root {
   }
 
   
+
   .detail-page {
     padding: 10px;
   }
