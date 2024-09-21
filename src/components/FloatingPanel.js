@@ -63,9 +63,9 @@ const FloatingPanel = ({ isDetailPage }) => {
       description: 'An innovative audio project combining Harman and AI technologies.'
     },
     {
-      name: 'G Day',
-      link: '/g-day',
-      icon: `${process.env.PUBLIC_URL}/icons/g-day.png`,
+      name: 'Mixed Text Style',
+      link: '/mixed-text-style',
+      icon: `${process.env.PUBLIC_URL}/icons/mixed.png`,
       description: 'A productivity app to help you plan and track your daily goals.'
     },
   ];
@@ -128,6 +128,30 @@ const FloatingPanel = ({ isDetailPage }) => {
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [showSideProjectsCards]);
+
+  const sideProjectCardVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      rotate: i % 2 === 0 ? 5 : -5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        delay: i * 0.05,
+      },
+    }),
+    exit: { 
+      opacity: 0, 
+      scale: 0.8, 
+      y: 50, 
+      transition: { 
+        duration: 0.2,
+        ease: "easeIn"
+      }
+    },
+  };
 
   useEffect(() => {
     if (sideProjectsRef.current) {
@@ -203,7 +227,7 @@ const FloatingPanel = ({ isDetailPage }) => {
                           <div className="side-projects-icon">
                             <img src={`${process.env.PUBLIC_URL}/icons/string-extractor.png`} alt="String Extractor" className="mini-icon" />
                             <img src={`${process.env.PUBLIC_URL}/icons/harman-catdon.png`} alt="Harman/Catdon" className="mini-icon" />
-                            <img src={`${process.env.PUBLIC_URL}/icons/g-day.png`} alt="G Day" className="mini-icon" />
+                            <img src={`${process.env.PUBLIC_URL}/icons/mixed.png`} alt="G Day" className="mini-icon" />
                           </div>
                         ) : (
                           <img src={app.icon} alt={app.name} className="app-icon-img" />
@@ -242,35 +266,41 @@ const FloatingPanel = ({ isDetailPage }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      {showSideProjectsCards && (
-        <div 
-          ref={sideProjectsRef}
-          className="side-projects-cards"
-          onClick={(e) => {
-            console.log("Clicked on side-projects-cards container");
-            e.stopPropagation();
-          }}
-        >
-          {sideProjects.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-card" 
-              onClick={(e) => {
-                e.stopPropagation();
-                console.log("Clicked on project card:", project.name);
-                handleCardClick(project.link);
-              }}
-            >
-              <div className="icon-container">
-                <img src={project.icon} alt={project.name} className="project-icon" />
-              </div>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
+      <AnimatePresence>
+        {showSideProjectsCards && (
+          <motion.div 
+            ref={sideProjectsRef}
+            className="side-projects-cards"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onClick={(e) => {
+              console.log("Clicked on side-projects-cards container");
+              e.stopPropagation();
+            }}
+          >
+            {sideProjects.map((project, index) => (
+              <motion.div 
+                key={index} 
+                className="project-card" 
+                custom={index}
+                variants={sideProjectCardVariants}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log("Clicked on project card:", project.name);
+                  handleCardClick(project.link);
+                }}
+              >
+                <div className="icon-container">
+                  <img src={project.icon} alt={project.name} className="project-icon" />
+                </div>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

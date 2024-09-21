@@ -243,7 +243,7 @@ const projectData = {
       ],
     },
     gday: {
-      title: 'G\'Day',
+      title: 'Mixed\ Text\ Style',
       description: 'A birthday gift app I developed for Gigi using SwiftUI. It is a to-do list app that includes all the tasks she needs to accomplish on her birthday. Each task has a corresponding gift, and after all the tasks are completed.\n\n She became my girlfriend❤️',
       date: '2023',
       skills: ['UI/UX Design', 'iOS Dev'],

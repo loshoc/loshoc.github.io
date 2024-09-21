@@ -141,7 +141,7 @@ const App = () => {
             }
           />
           <Route
-            path="/g-day"
+            path="/mixed-text-style"
             element={
               <motion.div
                 className="page"

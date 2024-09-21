@@ -528,7 +528,7 @@ body, html, #root {
   gap: 0px;
 
   padding: 20px;
-
+  box-sizing: border-box;
   z-index: 10000; /* Increased z-index */
   pointer-events: auto; /* Ensure it can receive click events */
 }
@@ -542,7 +542,7 @@ body, html, #root {
   text-align: left;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  background: rgba(247, 247, 247, 0.8); /* Change background to be more opaque */
+  background: rgba(247, 247, 247, 0.9); /* Change background to be more opaque */
     backdrop-filter: blur(2px); /* Increase blur effect */
     -webkit-backdrop-filter: blur(2px);
   position: relative; /* For z-index to work */
@@ -557,8 +557,9 @@ body, html, #root {
 }
 
 .project-card:hover {
-  transform: rotateZ(0deg);
+  transform: scale(1.1) rotate(0deg) !important;
   z-index: 10002;
+  
 }
 
 .project-icon {
