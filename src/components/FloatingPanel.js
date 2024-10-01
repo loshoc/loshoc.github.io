@@ -54,19 +54,25 @@ const FloatingPanel = ({ isDetailPage }) => {
       name: 'String Extractor',
       link: '/string-extractor',
       icon: `${process.env.PUBLIC_URL}/icons/string-extractor.png`,
-      description: 'A tool for extracting strings from various file formats.'
+      description: 'A Figma plugin for extracting UI strings.'
     },
     {
       name: 'Harman/Catdon',
       link: '/harman-catdon',
       icon: `${process.env.PUBLIC_URL}/icons/harman-catdon.png`,
-      description: 'An innovative audio project combining Harman and AI technologies.'
+      description: 'An innovative audio visualization project using AI technologies.'
     },
     {
       name: 'Mixed Text Style',
       link: '/mixed-text-style',
       icon: `${process.env.PUBLIC_URL}/icons/mixed.png`,
-      description: 'A productivity app to help you plan and track your daily goals.'
+      description: 'A Figma plugin for custom fonts style in mixed-language text.'
+    },
+    {
+      name: 'Haptic Hub',
+      link: '/haptichub',
+      icon: `${process.env.PUBLIC_URL}/icons/haptic-hub.png`,
+      description: 'A iOS app for haptic feedback experiences.'
     },
   ];
 
@@ -227,12 +233,14 @@ const FloatingPanel = ({ isDetailPage }) => {
                           <div className="side-projects-icon">
                             <img src={`${process.env.PUBLIC_URL}/icons/string-extractor.png`} alt="String Extractor" className="mini-icon" />
                             <img src={`${process.env.PUBLIC_URL}/icons/harman-catdon.png`} alt="Harman/Catdon" className="mini-icon" />
-                            <img src={`${process.env.PUBLIC_URL}/icons/mixed.png`} alt="G Day" className="mini-icon" />
+                            <img src={`${process.env.PUBLIC_URL}/icons/mixed.png`} alt="Mixed Text Style" className="mini-icon" />
+                            <img src={`${process.env.PUBLIC_URL}/icons/haptic-hub.png`} alt="Haptic Hub" className="mini-icon" />
                           </div>
                         ) : (
                           <img src={app.icon} alt={app.name} className="app-icon-img" />
                         )}
                       </motion.div>
+                      {isMobile && <div className="app-name">{app.name}</div>}
                       {!isMobile && hoveredApp === app.name && (
                         <div className="tooltip">{app.name}</div>
                       )}
@@ -256,6 +264,7 @@ const FloatingPanel = ({ isDetailPage }) => {
                     >
                       <img src={app.icon} alt={app.name} className="app-icon-img" />
                     </motion.a>
+                    {isMobile && <div className="app-name">{app.name}</div>}
                     {!isMobile && hoveredApp === app.name && (
                       <div className="tooltip">{app.name}</div>
                     )}

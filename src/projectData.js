@@ -70,7 +70,8 @@ const projectData = {
       ],
       links: [
         { title: 'App Store', url: 'https://apps.apple.com/us/app/jbl-one/id1610239857' },
-        { title: 'iF Design Award 2024', url: 'https://ifdesign.com/en/winner-ranking/project/jbl-oneos-eco-system/618483' }
+        { title: 'iF Design Award 2024', url: 'https://ifdesign.com/en/winner-ranking/project/jbl-oneos-eco-system/618483' },
+        { title: 'JBL PartyLight Beam', url: 'https://www.youtube.com/watch?v=Sjw1KvMOOWQ' }
       ]
     },
     jblHp: {
@@ -126,6 +127,7 @@ const projectData = {
       ],
       links: [
         { title: 'App Store', url: 'https://apps.apple.com/us/app/jbl-headphones/id1053136947' },
+        { title: 'JBL Live 3 Series', url: 'https://www.theverge.com/2024/1/8/24030097/jbl-live-3-earbuds-touchscreen-charging-case' },
       ]
     },
     akgHp: {
@@ -234,7 +236,7 @@ const projectData = {
       title: 'Harman/Catdon',
       description: 'Harman/Catdon is an AI conductor capable of directing music in real-time. I collaborated with colleagues from the New Technology Innovation department on this project, focusing on visualizing the processed real-time data and mapping it to the character\'s actions and background environment. This innovative project was showcased in a live performance with a band at the 2023 annual dinner.',
       date: '2024',
-      skills: ['Visual Design','Data Visualization', 'Develop'],
+      skills: ['Visual Design','Data Visualization'],
       content: [
         {
           type: 'picture',
@@ -242,17 +244,51 @@ const projectData = {
         }
       ],
     },
-    gday: {
+    mixedTextStyle: {
       title: 'Mixed\ Text\ Style',
-      description: 'A birthday gift app I developed for Gigi using SwiftUI. It is a to-do list app that includes all the tasks she needs to accomplish on her birthday. Each task has a corresponding gift, and after all the tasks are completed.\n\n She became my girlfriend❤️',
-      date: '2023',
+      description: 'Mixed Text Style is a Figma plugin which streamlines the design of mixed-language text (English, Chinese, numbers) by allowing customized fonts and sizes. It supports both layered and single-layer text. The Auto Spacing feature automatically inserts spaces where needed, such as between Chinese and English characters, ensuring proper formatting and readability.',
+      date: '2024',
+      skills: ['UI/UX Design', 'Plugin Dev'],
+      content: [
+          {
+            type: 'picture',
+            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-1.png'
+          },
+          {
+            type: 'picture',
+            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-2.png'
+          },
+          {
+            type: 'picture',
+            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-3.png'
+          },
+      ],
+      links: [
+        { title: 'Figma Community', url: 'https://www.figma.com/community/plugin/1409430461681665825/mixed-text-style' },
+      ]
+    },
+    haptichub: {
+      title: 'Haptic Hub',
+      description: 'The inspiration for HapticHub came from a pain point I encountered while trying to add haptic feedback to some components in the work. Existing tools, like Prototype, lacked the precision we needed, such as step adjustments and more accurate intensity control. After conducting research, I discovered Apple\'s Core Haptics framework, which offers some predefined patterns and strong customizable ability. Based on this framework, I designed and developed HapticHub. It allows designers and developers to directly experience various vibration feedbacks in the app, helping them better define the tactile responses for different product scenarios.',
+      date: '2024',
       skills: ['UI/UX Design', 'iOS Dev'],
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/gday.png'
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptichub-1.png'
+        },
+        {
+          type: 'description',
+          text: 'The app is divided into standard and customizable sections. In addition to the predefined patterns, I provide commonly used design components—slider, toggle, button, long press, and drag & drop—allowing users to customize their haptic feedback experiences. Both sections can export SwiftUI code, enabling seamless integration into applications.',
+        },
+        {
+          type: 'picture',
+          src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptichub-2.png'
         },
       ],
+      links: [
+        { title: 'App Store', url: 'https://apps.apple.com/us/app/haptichub/id6605925429' },
+      ]
     },
   };
   

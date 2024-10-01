@@ -151,11 +151,27 @@ const App = () => {
                 variants={pageVariants}
                 transition={pageTransition}
               >
-                <DetailPage {...projectData.gday} />
+                <DetailPage {...projectData.mixedTextStyle} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/haptichub"
+            element={
+              <motion.div
+                className="page"
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DetailPage {...projectData.haptichub} />
               </motion.div>
             }
           />
         </Routes>
+        
       </AnimatePresence>
     </div>
   );

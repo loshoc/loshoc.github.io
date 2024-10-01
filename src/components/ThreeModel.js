@@ -150,9 +150,9 @@ const ThreeModel = () => {
 
   return (
     <div style={{ 
-      width: '100vw', 
-      height: '100vh', 
-      position: 'relative', // Add this to allow absolute positioning of children
+      // width: '100vw', 
+      // height: '100vh', 
+      // position: 'relative', // Add this to allow absolute positioning of children
     }}>
       <Canvas 
         style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
@@ -173,7 +173,6 @@ const ThreeModel = () => {
         zIndex: 2,
         pointerEvents: 'none', // This allows interactions with the 3D model underneath
       }}>
-        <FloatingPanel />
       </div>
     </div>
   );
