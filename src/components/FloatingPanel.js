@@ -53,38 +53,38 @@ const FloatingPanel = ({ isDetailPage }) => {
     {
       name: 'String Extractor',
       link: '/string-extractor',
-      icon: `${process.env.PUBLIC_URL}/icons/string-extractor.png`,
+      icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/string-extractor.png`,
       description: 'A Figma plugin for extracting UI strings.'
     },
     {
       name: 'Harman/Catdon',
       link: '/harman-catdon',
-      icon: `${process.env.PUBLIC_URL}/icons/harman-catdon.png`,
+      icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/harman-catdon.png`,
       description: 'An innovative audio visualization project using AI technologies.'
     },
     {
       name: 'Mixed Text Style',
       link: '/mixed-text-style',
-      icon: `${process.env.PUBLIC_URL}/icons/mixed.png`,
+      icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed.png`,
       description: 'A Figma plugin for custom fonts style in mixed-language text.'
     },
     {
       name: 'Haptic Hub',
       link: '/haptichub',
-      icon: `${process.env.PUBLIC_URL}/icons/haptic-hub.png`,
-      description: 'A iOS app for haptic feedback experiences.'
+      icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptic-hub.png`,
+      description: 'An iOS app for haptic feedback experiences.'
     },
   ];
 
   const apps = [
-    { name: 'JBL One', link: '/jbl-one', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/jbl-one.png` },
-    { name: 'JBL Headphones', link: '/jbl-headphones', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/jbl-headphones.png` },
-    { name: 'AKG Headphones', link: '/akg-headphones', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/akg-headphones.png` },
-    { name: 'Linfo', link: '/linfo', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/linfo.png` },
+    { name: 'JBL One', link: '/jbl-one', type: 'internal', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/jbl-one.png` },
+    { name: 'JBL Headphones', link: '/jbl-headphones', type: 'internal', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/jbl-headphones.png` },
+    { name: 'AKG Headphones', link: '/akg-headphones', type: 'internal', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/akg-headphones.png` },
+    { name: 'Linfo', link: '/linfo', type: 'internal', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/linfo.png` },
     { name: 'Side Projects', link: '#', type: 'internal', icon: `${process.env.PUBLIC_URL}/icons/side-projects.png` },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/kiwi-guo/', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/linkedin.png` },
-    { name: 'GitHub', link: 'https://github.com/loshoc', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/github.png` },
-    { name: 'Email', link: 'mailto:loshochung@gmail.com', type: 'external', icon: `${process.env.PUBLIC_URL}/icons/email.png` },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/kiwi-guo/', type: 'external', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/linkedin.png` },
+    { name: 'GitHub', link: 'https://github.com/loshoc', type: 'external', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/github.png` },
+    { name: 'Email', link: 'mailto:loshochung@gmail.com', type: 'external', icon: `https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/email.png` },
   ];
 
   const variants = {
@@ -231,10 +231,10 @@ const FloatingPanel = ({ isDetailPage }) => {
                       >
                         {app.name === 'Side Projects' ? (
                           <div className="side-projects-icon">
-                            <img src={`${process.env.PUBLIC_URL}/icons/string-extractor.png`} alt="String Extractor" className="mini-icon" />
-                            <img src={`${process.env.PUBLIC_URL}/icons/harman-catdon.png`} alt="Harman/Catdon" className="mini-icon" />
-                            <img src={`${process.env.PUBLIC_URL}/icons/mixed.png`} alt="Mixed Text Style" className="mini-icon" />
-                            <img src={`${process.env.PUBLIC_URL}/icons/haptic-hub.png`} alt="Haptic Hub" className="mini-icon" />
+                            <img src={`https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/string-extractor.png`} alt="String Extractor" className="mini-icon" />
+                            <img src={`https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/harman-catdon.png`} alt="Harman/Catdon" className="mini-icon" />
+                            <img src={`https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed.png`} alt="Mixed Text Style" className="mini-icon" />
+                            <img src={`https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptic-hub.png`} alt="Haptic Hub" className="mini-icon" />
                           </div>
                         ) : (
                           <img src={app.icon} alt={app.name} className="app-icon-img" />

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, shaderMaterial } from '@react-three/drei';
+import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { useGLTF, shaderMaterial, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import FloatingPanel from './FloatingPanel'; // Make sure to import the FloatingPanel component
 
@@ -55,6 +55,7 @@ const Model = () => {
   const { scene } = useGLTF('/assets/kiwi.glb');
   const modelRef = useRef();
   const gradientMaterial = useRef();
+  const [modelLoaded, setModelLoaded] = useState(false);
   const orangeMaterial = new THREE.MeshBasicMaterial({ 
     color: 0xFF9F38,
     side: THREE.DoubleSide,
@@ -75,6 +76,7 @@ const Model = () => {
           }
         }
       });
+      setModelLoaded(true);
     }
   }, [scene]);
 
@@ -82,10 +84,14 @@ const Model = () => {
     if (gradientMaterial.current) {
       gradientMaterial.current.uTime = state.clock.getElapsedTime();
     }
+    if (modelRef.current && modelLoaded) {
+      modelRef.current.position.y = 0.5;
+      modelRef.current.scale.set(0.5, 0.5, 0.5);
+    }
   });
 
   return (
-    <group ref={modelRef} scale={0.5} position={[0, 0.5, 0]}> {/* Move the model up by 1 unit */}
+    <group ref={modelRef}>
       <gradientShaderMaterial ref={gradientMaterial} />
       <primitive object={scene} />
     </group>
@@ -127,7 +133,7 @@ const MouseRotation = ({ mouseRef }) => {
 
 const ThreeModel = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
-  const [, forceRender] = useState();
+  const [modelReady, setModelReady] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -139,8 +145,8 @@ const ThreeModel = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Force a re-render after a short delay to ensure proper initialization
-    const timer = setTimeout(() => forceRender({}), 100);
+    // Use a timeout to ensure the model is loaded and positioned
+    const timer = setTimeout(() => setModelReady(true), 500);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -150,20 +156,22 @@ const ThreeModel = () => {
 
   return (
     <div style={{ 
-      // width: '100vw', 
-      // height: '100vh', 
-      // position: 'relative', // Add this to allow absolute positioning of children
+      width: '100vw', 
+      height: '100vh', 
+      position: 'absolute',
     }}>
-      <Canvas 
-        style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
-        camera={{ position: [0, 0, 10], fov: 50 }}
-      >
-        <CameraController />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <Model />
-        <MouseRotation mouseRef={mouseRef} />
-      </Canvas>
+      {modelReady && (
+        <Canvas 
+          style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
+          camera={{ position: [0, 0, 10], fov: 50 }}
+        >
+          <CameraController />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <Model />
+          <MouseRotation mouseRef={mouseRef} />
+        </Canvas>
+      )}
       <div style={{
         position: 'absolute',
         top: 0,
@@ -171,7 +179,7 @@ const ThreeModel = () => {
         width: '100%',
         height: '100%',
         zIndex: 2,
-        pointerEvents: 'none', // This allows interactions with the 3D model underneath
+        pointerEvents: 'none',
       }}>
       </div>
     </div>
