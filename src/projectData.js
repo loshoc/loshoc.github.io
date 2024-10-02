@@ -8,7 +8,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-1.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-1.png',
           tag: 'Design System'
         },
         {
@@ -18,7 +18,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-2.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-2.png',
           tag: 'Design System'
         },
         {
@@ -28,13 +28,13 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-3.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-3.png',
           tag: 'Design System'
         },
         
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-4.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-4.png',
           tag: 'Design System'
         },
         {
@@ -44,7 +44,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-5.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-5.png',
           tag: 'Design System'
         },
         {
@@ -54,7 +54,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-6.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-6.png',
           tag: 'PartyLight'
         },
         {
@@ -64,7 +64,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-one-7.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-one-7.png',
           tag: 'Account System'
         },
       ],
@@ -82,7 +82,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-1.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-hp-1.png'
         },
         {
           type: 'description',
@@ -91,7 +91,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-2.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-hp-2.png',
           tag: 'Restructure'
         },
         {
@@ -101,7 +101,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-3.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-hp-3.png',
           tag: 'Relax Sound'
         },
         {
@@ -111,7 +111,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-4.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-hp-4.png',
           tag: 'Personi-Fi'
         },
         {
@@ -121,7 +121,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/jbl-hp-5.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/jbl-hp-5.png',
           tag: 'JBL Live 3 Series'
         },
       ],
@@ -138,7 +138,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-1.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/akg-hp-1.png'
         },
         {
           type: 'description',
@@ -147,7 +147,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-2.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/akg-hp-2.png',
           tag: 'Multi-Source Control'
         },
         {
@@ -157,7 +157,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/akg-hp-3.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/akg-hp-3.png',
           tag: 'Entertainment/Audio Mode'
         },
         
@@ -174,7 +174,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-1.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/string-extractor-1.png'
         },
         {
           type: 'description',
@@ -183,7 +183,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-2.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/string-extractor-2.png',
           tag: 'Background'
         },
         {
@@ -193,7 +193,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-3.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/string-extractor-3.png',
           tag: 'Workshop'
         },
         {
@@ -203,7 +203,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/string-extractor-4.png',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/string-extractor-4.png',
           tag: 'Update'
         },
         
@@ -221,11 +221,11 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/linfo-1.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/linfo-1.png'
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/linfo-2.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/linfo-2.png'
         }
       ],
       links: [
@@ -240,28 +240,28 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/master/img/harman-catdon.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/harman-catdon.png'
         }
       ],
     },
     mixedTextStyle: {
-      title: 'Mixed\ Text\ Style',
+      title: 'Mixed Text Style',
       description: 'Mixed Text Style is a Figma plugin which streamlines the design of mixed-language text (English, Chinese, numbers) by allowing customized fonts and sizes. It supports both layered and single-layer text. The Auto Spacing feature automatically inserts spaces where needed, such as between Chinese and English characters, ensuring proper formatting and readability.',
       date: '2024',
       skills: ['UI/UX Design', 'Plugin Dev'],
       content: [
-          {
-            type: 'picture',
-            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-1.png'
-          },
-          {
-            type: 'picture',
-            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-2.png'
-          },
-          {
-            type: 'picture',
-            src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/mixed-3.png'
-          },
+        {
+          type: 'picture',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/mixed-1.png'
+        },
+        {
+          type: 'picture',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/mixed-2.png'
+        },
+        {
+          type: 'picture',
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/mixed-3.png'
+        },
       ],
       links: [
         { title: 'Figma Community', url: 'https://www.figma.com/community/plugin/1409430461681665825/mixed-text-style' },
@@ -275,7 +275,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptichub-1.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/haptichub-1.png'
         },
         {
           type: 'description',
@@ -283,7 +283,7 @@ const projectData = {
         },
         {
           type: 'picture',
-          src: 'https://raw.githubusercontent.com/loshoc/webimg/refs/heads/master/img/haptichub-2.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/haptichub-2.png'
         },
       ],
       links: [

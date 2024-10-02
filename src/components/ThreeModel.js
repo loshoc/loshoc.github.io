@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
-import { useGLTF, shaderMaterial, useTexture } from '@react-three/drei';
+import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
+import { useGLTF, shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import FloatingPanel from './FloatingPanel'; // Make sure to import the FloatingPanel component
 
@@ -51,48 +51,57 @@ const GradientShaderMaterial = shaderMaterial(
 
 extend({ GradientShaderMaterial });
 
-const Model = () => {
+const Model = ({ onLoad }) => {
   const { scene } = useGLTF('/assets/kiwi.glb');
   const modelRef = useRef();
   const gradientMaterial = useRef();
-  const [modelLoaded, setModelLoaded] = useState(false);
-  const orangeMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xFF9F38,
-    side: THREE.DoubleSide,
-    transparent: true,
-    opacity: 1,
-  });
+  const [opacity, setOpacity] = useState(0);
+  const [isModelReady, setIsModelReady] = useState(false);
 
   useEffect(() => {
     if (scene) {
+      let sphereCount = 0;
       scene.traverse((child) => {
         if (child.isMesh) {
           if (child.name.toLowerCase().includes('sphere')) {
-            child.material = orangeMaterial;
-            child.castShadow = false;
-            child.receiveShadow = false;
+            sphereCount++;
+            child.material = new THREE.MeshBasicMaterial({ 
+              color: sphereCount === 1 ? 0x6785D1 : 0xFF9F38,
+              side: THREE.DoubleSide,
+              transparent: true,
+              opacity: opacity,
+            });
           } else {
             child.material = gradientMaterial.current;
           }
+          child.material.transparent = true;
+          child.material.opacity = opacity;
         }
       });
-      setModelLoaded(true);
+      setIsModelReady(true);
+      if (onLoad && typeof onLoad === 'function') {
+        onLoad();
+      }
     }
-  }, [scene]);
+  }, [scene, onLoad, opacity]);
 
   useFrame((state) => {
     if (gradientMaterial.current) {
       gradientMaterial.current.uTime = state.clock.getElapsedTime();
     }
-    if (modelRef.current && modelLoaded) {
+    if (modelRef.current && isModelReady) {
       modelRef.current.position.y = 0.5;
       modelRef.current.scale.set(0.5, 0.5, 0.5);
+    }
+    // Gradually increase opacity
+    if (opacity < 1) {
+      setOpacity(prev => Math.min(prev + 0.05, 1));
     }
   });
 
   return (
     <group ref={modelRef}>
-      <gradientShaderMaterial ref={gradientMaterial} />
+      <gradientShaderMaterial ref={gradientMaterial} transparent opacity={opacity} />
       <primitive object={scene} />
     </group>
   );
@@ -133,7 +142,7 @@ const MouseRotation = ({ mouseRef }) => {
 
 const ThreeModel = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
-  const [modelReady, setModelReady] = useState(false);
+  const [modelLoaded, setModelLoaded] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -146,7 +155,7 @@ const ThreeModel = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Use a timeout to ensure the model is loaded and positioned
-    const timer = setTimeout(() => setModelReady(true), 500);
+    const timer = setTimeout(() => setModelLoaded(true), 400);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -154,13 +163,17 @@ const ThreeModel = () => {
     };
   }, []);
 
+  const handleModelLoad = () => {
+    setModelLoaded(true);
+  };
+
   return (
     <div style={{ 
       width: '100vw', 
       height: '100vh', 
       position: 'absolute',
     }}>
-      {modelReady && (
+      {modelLoaded && (
         <Canvas 
           style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
           camera={{ position: [0, 0, 10], fov: 50 }}
@@ -168,7 +181,7 @@ const ThreeModel = () => {
           <CameraController />
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 5, 5]} intensity={1} />
-          <Model />
+          <Model onLoad={handleModelLoad} />
           <MouseRotation mouseRef={mouseRef} />
         </Canvas>
       )}
