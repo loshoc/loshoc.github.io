@@ -182,7 +182,7 @@ const Paragraph1 = ({ isHovered, parentRef }) => (
     I am a <HandwriteCircle isHovered={isHovered} parentRef={parentRef}>Design Engineer</HandwriteCircle> architecting the bridge between aesthetic intuition
     and production. At <em>Harman</em>, I lead the{' '}
     <HandwriteLine isHovered={isHovered} parentRef={parentRef}>AI-native Design System</HandwriteLine>, streamlining
-    complex NPI requirements into natural language that redefine efficiency.{' '}<svg className="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FF5901" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    complex NPI requirements into intelligent workflows that redefine engineering efficiency.{' '}<svg className="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FF5901" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </>
 );
 
@@ -204,14 +204,33 @@ const Paragraph3 = ({ isHovered, parentRef }) => (
   </>
 );
 
+const Paragraph4 = ({ clicked }) => {
+  const [bouncing, setBouncing] = useState(false);
+
+  useEffect(() => {
+    if (clicked) setBouncing(true);
+  }, [clicked]);
+
+  return (
+    <>
+      Off-duty, you'll find me on the tennis court, perfecting the art of looking like a pro while playing like a beginner. I own far more beautiful gear than actual ranking points, but I'm obsessed with the process <span
+        className={`tennis-bounce${bouncing ? ' bouncing' : ''}`}
+        onAnimationEnd={() => setBouncing(false)}
+      >🎾</span>
+    </>
+  );
+};
+
 const paragraphData = [
   { id: 'design-system', Component: Paragraph1 },
   { id: 'iconic-products', Component: Paragraph2 },
   { id: 'experiments', Component: Paragraph3 },
+  { id: 'off-duty', Component: Paragraph4, noToast: true },
 ];
 
-const ParagraphBlock = ({ id, Component, onClick }) => {
+const ParagraphBlock = ({ id, Component, onClick, noToast }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
   const pRef = useRef(null);
 
   return (
@@ -219,11 +238,11 @@ const ParagraphBlock = ({ id, Component, onClick }) => {
       key={id}
       className="home-paragraph"
       variants={itemVariants}
-      onClick={onClick}
+      onClick={() => { if (!noToast) onClick(); setClickCount(c => c + 1); }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <p ref={pRef} style={{ position: 'relative' }}><Component isHovered={isHovered} parentRef={pRef} /></p>
+      <p ref={pRef} style={{ position: 'relative' }}><Component isHovered={isHovered} parentRef={pRef} clicked={clickCount} /></p>
     </motion.div>
   );
 };
