@@ -155,7 +155,7 @@ const ThreeModel = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Use a timeout to ensure the model is loaded and positioned
-    const timer = setTimeout(() => setModelLoaded(true), 400);
+    const timer = setTimeout(() => setModelLoaded(true), 300);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);

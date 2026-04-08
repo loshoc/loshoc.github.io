@@ -240,7 +240,7 @@ const projectData = {
       content: [
         {
           type: 'picture',
-          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/harman-catdon.png'
+          src: 'https://cdn.jsdelivr.net/gh/loshoc/webimg@master/img/harman-catdon-1.png'
         }
       ],
     },
