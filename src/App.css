@@ -116,6 +116,19 @@ body, html, #root {
   color: #999;
 }
 
+.footer-email-btn {
+  all: unset;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-email-btn:hover {
+  opacity: 0.5;
+}
+
 /* Toast */
 .toast {
   position: fixed;

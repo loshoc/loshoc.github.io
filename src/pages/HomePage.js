@@ -278,12 +278,11 @@ const HomePage = () => {
         {emailCopied ? (
           <span className="footer-copied">Copied</span>
         ) : (
-          <a href="#" onClick={(e) => {
-            e.preventDefault();
+          <button className="footer-email-btn" onClick={() => {
             navigator.clipboard.writeText('kiwiguo1231@gmail.com');
             setEmailCopied(true);
             setTimeout(() => setEmailCopied(false), 3000);
-          }}>Email</a>
+          }}>Email</button>
         )}
       </motion.div>
 
