@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Toast = ({ message, onClose }) => (
   <motion.div
     className="toast"
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 40, x: '-50%' }}
+    animate={{ opacity: 1, y: 0, x: '-50%' }}
+    exit={{ opacity: 0, y: 20, x: '-50%' }}
     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
   >
     {message}
@@ -182,7 +182,7 @@ const Paragraph1 = ({ isHovered, parentRef }) => (
     I am a <HandwriteCircle isHovered={isHovered} parentRef={parentRef}>Design Engineer</HandwriteCircle> architecting the bridge between aesthetic intuition
     and production. At <em>Harman</em>, I lead the{' '}
     <HandwriteLine isHovered={isHovered} parentRef={parentRef}>AI-native Design System</HandwriteLine>, streamlining
-    complex NPI requirements into natural language that redefine efficiency.
+    complex NPI requirements into natural language that redefine efficiency.{' '}<svg className="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FF5901" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </>
 );
 
@@ -191,7 +191,7 @@ const Paragraph2 = ({ isHovered, parentRef }) => (
     As the <HandwriteCircle isHovered={isHovered} parentRef={parentRef}>Lead UIUX Designer</HandwriteCircle> for a portfolio of Iconic Products, I define the{' '}
     <HandwriteLine isHovered={isHovered} parentRef={parentRef}>signature lighting experiences</HandwriteLine> for <em>JBL</em> and <em>Harman/Kardon</em>. This
     encompasses the end-to-end evolution&mdash;from its
-    foundational logic to a generative, shader-driven ecosystem.
+    foundational logic to a generative, shader-driven ecosystem.{' '}<svg className="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FF5901" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </>
 );
 
@@ -200,7 +200,7 @@ const Paragraph3 = ({ isHovered, parentRef }) => (
     Beyond my core roles, I explore the frontiers of human-computer
     interaction through{' '}
     <HandwriteLine isHovered={isHovered} parentRef={parentRef}>Experiments &amp; Side Projects</HandwriteLine>,
-    ranging from <HandwriteLine isHovered={isHovered} parentRef={parentRef}>AI-driven tools to open-source contributions</HandwriteLine>.
+    ranging from <HandwriteLine isHovered={isHovered} parentRef={parentRef}>AI-driven tools to open-source contributions</HandwriteLine>.{' '}<svg className="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FF5901" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
   </>
 );
 
@@ -230,6 +230,7 @@ const ParagraphBlock = ({ id, Component, onClick }) => {
 
 const HomePage = () => {
   const [toast, setToast] = useState(null);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   useEffect(() => {
     if (toast) {
@@ -272,9 +273,18 @@ const HomePage = () => {
       >
         <a href="https://www.linkedin.com/in/kiwi-guo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <span className="footer-sep">/</span>
-        <a href="https://github.com/nicekiwi137" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/loshoc" target="_blank" rel="noopener noreferrer">GitHub</a>
         <span className="footer-sep">/</span>
-        <a href="mailto:nicekiwi137@gmail.com">Email</a>
+        {emailCopied ? (
+          <span className="footer-copied">Copied</span>
+        ) : (
+          <a href="#" onClick={(e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText('kiwiguo1231@gmail.com');
+            setEmailCopied(true);
+            setTimeout(() => setEmailCopied(false), 3000);
+          }}>Email</a>
+        )}
       </motion.div>
 
       <AnimatePresence>
