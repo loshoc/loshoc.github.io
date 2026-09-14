@@ -122,9 +122,10 @@ const HomePage = () => {
 
   return (
     <main className={`portfolio-player player--${activeProject.tint}`} style={{ '--player-start': activeProject.start, '--player-end': activeProject.end }}>
-      <div className="ambient" aria-hidden="true"><div className="ambient__orb ambient__orb--one" /><div className="ambient__orb ambient__orb--two" /><div className="ambient__grain" /></div>
+      <div className="ambient" aria-hidden="true"><div className="ambient__grain" /></div>
       <a className="identity" href="#about" aria-label="About Kiwi Guo"><span>about</span><strong>KIWI</strong></a>
       <section className="project-stack" aria-label="Selected projects" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={() => setIsPaused(false)} onWheel={handleWheel}>
+        <div className="selected-gradient" aria-hidden="true" />
         {orderedProjects.filter((project) => project.index === loopTransition?.exitingIndex || project.index !== loopTransition?.enteringIndex).map((project) => {
           const depth = Math.abs(project.offset);
           const isActive = project.index === activeIndex;
