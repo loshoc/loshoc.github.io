@@ -132,6 +132,7 @@ const HomePage = () => {
           const isExiting = project.index === loopTransition?.exitingIndex;
           const isResetting = project.index === resettingIndex;
           return <button className={`project-player project-player--${project.tint} depth-${depth} ${isActive ? 'is-active' : ''} ${isExiting ? 'is-exiting' : ''} ${isResetting ? 'is-resetting' : ''}`} key={project.id} style={{ '--offset': isExiting ? loopTransition.exitingOffset : project.offset, '--depth': depth, '--card-start': project.start, '--card-end': project.end }} type="button" aria-pressed={isActive} aria-label={`${project.title}: ${project.phrase}`} onClick={() => { activeIndexRef.current = project.index; setActiveIndex(project.index); }}>
+            <svg className="border-beam" viewBox="0 0 294 78" preserveAspectRatio="none" aria-hidden="true"><rect className="border-beam__line" x="1" y="1" width="292" height="76" rx="25" pathLength="100" /></svg>
             <CoverArt kind={project.art} />
             <span className="project-copy"><span className="project-eyebrow">{formatDotSeparated(project.eyebrow)}</span><span className="project-title">{project.title}</span><span className="project-phrase">{project.phrase}</span></span>
           </button>;
