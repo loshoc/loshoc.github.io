@@ -122,15 +122,17 @@ const HomePage = () => {
 
   return (
     <main className={`portfolio-player player--${activeProject.tint}`} style={{ '--player-start': activeProject.start, '--player-end': activeProject.end }}>
-      <div className="ambient" aria-hidden="true"><div className="ambient__orb ambient__orb--one" /><div className="ambient__orb ambient__orb--two" /><div className="ambient__grain" /></div>
+      <div className="ambient" aria-hidden="true"><div className="ambient__grain" /></div>
       <a className="identity" href="#about" aria-label="About Kiwi Guo"><span>about</span><strong>KIWI</strong></a>
       <section className="project-stack" aria-label="Selected projects" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={() => setIsPaused(false)} onWheel={handleWheel}>
+        <div className="selected-gradient" aria-hidden="true" />
         {orderedProjects.filter((project) => project.index === loopTransition?.exitingIndex || project.index !== loopTransition?.enteringIndex).map((project) => {
           const depth = Math.abs(project.offset);
           const isActive = project.index === activeIndex;
           const isExiting = project.index === loopTransition?.exitingIndex;
           const isResetting = project.index === resettingIndex;
-          return <button className={`project-player project-player--${project.tint} depth-${depth} ${isActive ? 'is-active' : ''} ${isExiting ? 'is-exiting' : ''} ${isResetting ? 'is-resetting' : ''}`} key={project.id} style={{ '--offset': isExiting ? loopTransition.exitingOffset : project.offset, '--depth': depth, '--card-start': project.start, '--card-end': project.end }} type="button" aria-pressed={isActive} aria-label={`${project.title}: ${project.phrase}`} onClick={() => { activeIndexRef.current = project.index; setActiveIndex(project.index); }}>
+          return <button className={`project-player project-player--${project.tint} depth-${depth} ${isActive ? 'is-active' : ''} ${isExiting ? 'is-exiting' : ''} ${isResetting ? 'is-resetting' : ''}`} key={project.id} style={{ '--offset': isExiting ? loopTransition.exitingOffset : project.offset, '--depth': depth, '--card-start': project.start, '--card-end': project.end }} type="button" aria-pressed={isActive} aria-label={`${project.title}: ${project.phrase}`} onClick={() => { if (isActive && project.id === 'pulse-6') return; activeIndexRef.current = project.index; setActiveIndex(project.index); }}>
+            <svg className="border-beam" viewBox="0 0 294 78" preserveAspectRatio="none" aria-hidden="true"><rect className="border-beam__line" x="1" y="1" width="292" height="76" rx="25" pathLength="100" /></svg>
             <CoverArt kind={project.art} />
             <span className="project-copy"><span className="project-eyebrow">{formatDotSeparated(project.eyebrow)}</span><span className="project-title">{project.title}</span><span className="project-phrase">{project.phrase}</span></span>
           </button>;
